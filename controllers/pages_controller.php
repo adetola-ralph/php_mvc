@@ -1,6 +1,6 @@
 <?php
 
-class PagesController()
+class PagesController
 {
 	public function home()
 	{
