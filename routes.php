@@ -9,6 +9,11 @@ function call($controller, $action)
 		case 'pages':
 			$controller = new PagesController();
 		break;
+		case 'posts':
+			//model to query the databse later in the controller
+			require_once('models/post.php');
+			$controller = new PostsController();
+		break;
 	}
 
 	//call the action
@@ -17,7 +22,8 @@ function call($controller, $action)
 
 //List of controllers and their action
 //Allowed values
-$controllers = array('pages' =>['home','error']);
+$controllers = array('pages' => ['home', 'error'],
+                       'posts' => ['index', 'show']);
 
 //check if the requested controller and actions exists
 //if any other access is tried a redirection will occur
